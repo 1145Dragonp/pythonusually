@@ -1,29 +1,29 @@
-类别,函数/方法,说明,示例
-路径处理,os.path.join(a, b),安全拼接路径,os.path.join('dir', 'file.txt')
-路径处理,os.path.abspath(path),转绝对路径,os.path.abspath('.') 
-路径处理,os.path.exists(path),路径是否存在,os.path.exists('file.txt')
-路径处理,os.path.isfile(path),是否为文件,os.path.isfile('a.txt')
-路径处理,os.path.isdir(path),是否为目录,os.path.isdir('mydir')
-路径处理,os.path.getsize(path),文件大小（字节）,os.path.getsize('data.bin')
-路径处理,os.path.splitext(path),分离主名和扩展名,os.path.splitext('doc.pdf') → ('doc', '.pdf')
-目录操作,os.getcwd(),获取当前目录,os.getcwd()
-目录操作,os.chdir(path),切换目录,os.chdir('/tmp')
-目录操作,os.listdir(path),列出目录内容,os.listdir('.')
-目录操作,os.makedirs(path, exist_ok=True),递归创建目录,os.makedirs('a/b/c', exist_ok=True)
-目录操作,os.mkdir(path),创建单层目录,os.mkdir('new')
-目录操作,os.rmdir(path),删除空目录,os.rmdir('empty')
-文件操作,os.remove(path),删除文件,os.remove('old.txt')
-文件操作,os.rename(src, dst),重命名/移动,os.rename('a.txt', 'b.txt')
-环境信息,os.name,系统名（'nt'/'posix'）,os.name → 'posix'
-环境信息,os.environ,环境变量字典,os.environ['HOME']
-环境信息,os.getenv('KEY', default),安全获取环境变量,os.getenv('DEBUG', '0')
-进程信息,os.getpid(),当前进程 ID,os.getpid()
-文本文件 - 写入,open('f.txt', 'w'),写模式,f = open('f.txt','w'); f.write('hi'); f.close()
-文本文件 - 读取,open('f.txt', 'r').read(),一次性读全文,content = open('f.txt').read()
-文本文件 - 逐行,for line in open('f.txt'),推荐用 with,with open('f.txt') as f: for line in f: ...
-文本文件 - 安全写入,with open(...) as f,自动关闭,with open('out.txt','w') as f: f.write('data')
-文本文件 - 编码,encoding='utf-8',指定编码,open('f.txt', encoding='utf-8')
-文本文件 - 读取行列表,readlines(),返回列表,lines = f.readlines()
-文本文件 - 写入多行,writelines(lines),写入字符串列表,f.writelines(['a\n','b\n'])
-高级建议,shutil.rmtree(path),删除非空目录（需 import shutil）,shutil.rmtree('mydir')
-高级建议,pathlib.Path,现代路径操作（Python 3.4+）,from pathlib import Path; p = Path('a.txt'); p.read_text()
+"类别","函数/方法","说明","示例"
+"路径处理","os.path.join(a, b)","安全拼接路径（跨平台兼容）","os.path.join('dir', 'file.txt')"
+"路径处理","os.path.abspath(path)","将路径转换为绝对路径","os.path.abspath('.')"
+"路径处理","os.path.exists(path)","判断路径是否存在","os.path.exists('file.txt')"
+"路径处理","os.path.isfile(path)","判断是否为文件","os.path.isfile('a.txt')"
+"路径处理","os.path.isdir(path)","判断是否为目录","os.path.isdir('mydir')"
+"路径处理","os.path.getsize(path)","获取文件大小（字节）","os.path.getsize('data.bin')"
+"路径处理","os.path.splitext(path)","分离文件主名和扩展名","os.path.splitext('doc.pdf') → ('doc', '.pdf')"
+"目录操作","os.getcwd()","获取当前工作目录","os.getcwd()"
+"目录操作","os.chdir(path)","切换当前工作目录","os.chdir('/tmp')"
+"目录操作","os.listdir(path)","列出目录下的文件和子目录名","os.listdir('.')"
+"目录操作","os.makedirs(path, exist_ok=True)","递归创建多层目录（exist_ok 避免报错）","os.makedirs('a/b/c', exist_ok=True)"
+"目录操作","os.mkdir(path)","创建单层目录","os.mkdir('new')"
+"目录操作","os.rmdir(path)","删除空目录","os.rmdir('empty')"
+"文件操作","os.remove(path)","删除文件","os.remove('old.txt')"
+"文件操作","os.rename(src, dst)","重命名或移动文件","os.rename('a.txt', 'b.txt')"
+"环境信息","os.name","操作系统标识（'nt' 表示 Windows，'posix' 表示 Linux/macOS）","os.name → 'posix'"
+"环境信息","os.environ","包含所有环境变量的字典","os.environ['HOME']"
+"环境信息","os.getenv('KEY', default)","安全获取环境变量，不存在时返回默认值","os.getenv('DEBUG', '0')"
+"进程信息","os.getpid()","获取当前进程 ID","os.getpid()"
+"文本文件 - 写入","open('f.txt', 'w')","以写模式打开文件（覆盖原内容）","f = open('f.txt','w'); f.write('hi'); f.close()"
+"文本文件 - 读取","open('f.txt', 'r').read()","一次性读取整个文件内容","content = open('f.txt').read()"
+"文本文件 - 逐行","for line in open('f.txt')","逐行读取（推荐使用 with 语句）","with open('f.txt') as f: for line in f: ..."
+"文本文件 - 安全写入","with open(...) as f","自动关闭文件，避免资源泄漏","with open('out.txt','w') as f: f.write('data')"
+"文本文件 - 编码","encoding='utf-8'","指定文件编码（推荐显式声明）","open('f.txt', encoding='utf-8')"
+"文本文件 - 读取行列表","readlines()","读取所有行并返回列表（含换行符）","lines = f.readlines()"
+"文本文件 - 写入多行","writelines(lines)","将字符串列表写入文件（不自动加换行）","f.writelines(['a\n','b\n'])"
+"高级建议","shutil.rmtree(path)","删除非空目录（需 import shutil）","import shutil; shutil.rmtree('mydir')"
+"高级建议","pathlib.Path","现代面向对象的路径操作（Python 3.4+）","from pathlib import Path; p = Path('a.txt'); p.read_text()"

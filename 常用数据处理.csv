@@ -1,5 +1,5 @@
 类别,操作/函数,说明,示例
-变量与通用,len(obj),获取长度或元素个数,len([1,2]) → 2；len("ab") → 2
+变量与通用,len(obj),获取长度或元素个数,"len([1,2]) → 2；len("ab") → 2"
 变量与通用,type(obj),查看对象类型,type([]) → <class 'list'>
 变量与通用,isinstance(obj, class),类型检查,isinstance([], list) → True
 变量与通用,copy.copy(obj),浅拷贝（需 import copy）,import copy; b = copy.copy(a)

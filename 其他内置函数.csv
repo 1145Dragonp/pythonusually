@@ -1,0 +1,40 @@
+函数名,说明,示例
+abs(x),绝对值,abs(-5) → 5
+round(x, n),四舍五入,round(3.1415, 2) → 3.14
+pow(x, y[, z]),幂运算或模幂,pow(2,3) → 8；pow(2,3,5) → 3
+min(iterable),最小值,min([3,1,2]) → 1
+max(iterable),最大值,max([3,1,2]) → 3
+sum(iterable, start),求和,sum([1,2,3]) → 6
+divmod(a, b),返回 (商, 余数),divmod(9,4) → (2,1)
+all(iterable),全为真则 True,all([True, 1]) → True
+any(iterable),任一为真则 True,any([0, '', 1]) → True
+enumerate(iterable, start),带索引遍历,for i,x in enumerate(['a']): ...
+zip(*iterables),并行迭代,zip([1,2], ['a','b']) → [(1,'a'),(2,'b')]
+map(func, iterable),映射,map(str, [1,2]) → ['1','2']
+filter(func, iterable),过滤,filter(lambda x: x>0, [-1,2]) → [2]
+sorted(iterable, key, reverse),返回排序新列表,sorted([3,1,2]) → [1,2,3]
+reversed(seq),反向迭代器,list(reversed([1,2])) → [2,1]
+range(stop),整数序列,range(3) → [0,1,2]（实际是 range 对象）
+iter(obj),获取迭代器,it = iter([1,2])
+next(iterator, default),取下一个,next(it) → 1
+callable(obj),是否可调用,callable(print) → True
+chr(i),码位转字符,chr(65) → 'A'
+ord(c),字符转码位,ord('A') → 65
+hex(x)/oct(x)/bin(x),进制字符串,hex(255) → '0xff'
+repr(obj),“官方”字符串表示,repr('hi') → "'hi'"
+eval(expr),执行表达式字符串,eval('2+3') → 5
+exec(code),执行代码字符串,exec('x=1')
+globals(),全局符号表,globals()['x'] = 10
+locals(),局部符号表,locals().keys()
+vars(obj),返回 obj.__dict__,vars(str)
+dir(obj),列出属性,dir([])
+help(obj),交互帮助,help(list.append)
+id(obj),对象唯一标识,id([]) → 内存地址
+hash(obj),哈希值（不可变对象）,hash('abc')
+input(prompt),读取用户输入,name = input('Name? ')
+print(*objs, sep, end),输出,print('a', 'b', sep='-')
+open(file, mode),打开文件,f = open('a.txt', 'r')
+super(),调用父类方法,super().__init__()
+staticmethod/classmethod,装饰器,@staticmethod def f(): ...
+property,定义属性访问器,x = property(get_x, set_x)
+bytes/bytearray,字节序列,bytes('abc', 'utf-8')
